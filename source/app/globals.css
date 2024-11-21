@@ -1,5 +1,17 @@
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/*
+  The CLI generates code in a way that StyleX is always applied first.
+  This can result in your reset CSS file overriding StyleX styles.
+
+  By using the `priority1` layer, you can ensure that your reset CSS is applied first.
+  This is a layer that is defined by StyleX and is only used for setting up variables.
+  Using it should work as expected.
+
+  This problem will be fixed in the CLI in the near future.
+*/
+@layer priority1 {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 }
